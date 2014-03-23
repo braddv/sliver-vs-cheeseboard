@@ -1,3 +1,4 @@
+BeautifulSoup==3.2.1
 Django==1.6.2
 dj-database-url==0.3.0
 dj-static==0.0.5

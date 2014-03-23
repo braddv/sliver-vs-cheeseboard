@@ -27,5 +27,6 @@ def get_pizzas():
   for j in range(len(cheeseboard_pizzas)):
     html_string += str(cheeseboard_dates[j])
     html_string += str(cheeseboard_pizzas[j])
-
-  return html_string += "</body></html>"
+  
+  html_string += "</body></html>"
+  return html_string
