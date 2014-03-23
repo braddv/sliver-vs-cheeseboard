@@ -14,13 +14,13 @@ def get_pizzas():
 
   cheeseboard_pizzas = cheeseboard_soup.findAll("div",attrs={"class":"column"})
 
-  sliver_pizzas = sliver_soup.findAll("div",attrs={"class":"panel menu"})
+  sliver_pizzas = sliver_soup.findAll("div",attrs={"class":"home-excerpt"})
   
   html_string = "<html><body>"
 
   html_string += "<h2>SLIVER</h2>"
 
-  html_string += str(sliver_pizzas[0])[148:]
+  html_string += str(sliver_pizzas[0])
   html_string += "<h2>CHEESEBOARD</h2>"
   html_string += str(cheeseboard_pizzas[0])[0:1111]
 
