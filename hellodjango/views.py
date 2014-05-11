@@ -14,22 +14,42 @@ def get_pizzas():
   sliver_soup = bs(sliver_page)
 
   cheeseboard_pizzas = cheeseboard_soup.findAll("div",attrs={"class":"column"})
-
   sliver_pizzas = sliver_soup.findAll("div",attrs={"class":"home-excerpt"})
 
-  monday = re.compile("Monday (.*?) Tuesday")
-  tuesday = re.compile("Tuesday (.*?) Wednesday")
-  wednesday = re.compile("Wednesday (.*?) Thursday")
-  thursday = re.compile("Thursday (.*?) Friday")
-
+  cheeseboard_pizzas = [pizza.text for pizza in cheeseboard_pizzas[0].findAll('p')]
+  sliver_pizzas = [pizza.text for pizza in sliver_pizzas[0].findAll('p')] 
+  
   html_string = "<html><body>"
 
   html_string += "<div style='width:50%;float:left'>"
   html_string += "<h2>SLIVER</h2>"
-  html_string += str(sliver_pizzas[0])
+  html_string += "<h3>MONDAY</h3>"
+  html_string += sliver_pizzas[0] 
+  html_string += "<h3>TUESDAY</h3>"
+  html_string += sliver_pizzas[1]
+  html_string += "<h3>WEDNESDAY</h3>"
+  html_string += sliver_pizzas[2]
+  html_string += "<h3>THURSDAY</h3>"
+  html_string += sliver_pizzas[3]
+  html_string += "<h3>FRIDAY</h3>"
+  html_string += sliver_pizzas[4]
+  html_string += "<h3>SATURDAY</h3>"
+  html_string += sliver_pizzas[5]
   html_string += "</div><div style='width:50%;float:left'>"
   html_string += "<h2>CHEESEBOARD</h2>"
-  html_string += str(cheeseboard_pizzas[0])[55:1000]
+  html_string += "<h3>MONDAY</h3>"
+  html_string += "GO TO SLIVER<br>"
+  html_string += "NO ONE IS HERE"
+  html_string += "<h3>TUESDAY</h3>"
+  html_string += cheeseboard_pizzas[0]
+  html_string += "<h3>WEDNESDAY</h3>"
+  html_string += cheeseboard_pizzas[1]
+  html_string += "<h3>THURSDAY</h3>"
+  html_string += cheeseboard_pizzas[2]
+  html_string += "<h3>FRIDAY</h3>"
+  html_string += cheeseboard_pizzas[3]
+  html_string += "<h3>SATURDAY</h3>"
+  html_string += cheeseboard_pizzas[4]
   html_string += "</div>"
   html_string += "</body></html>"
   return html_string
