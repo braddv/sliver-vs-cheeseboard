@@ -1,6 +1,10 @@
 from django.http import HttpResponse
 import urllib2
 from BeautifulSoup import BeautifulSoup as bs
+import re
+from mechanize import Browser
+
+
 
 def home(request):
   html = get_pizzas()
@@ -8,14 +12,19 @@ def home(request):
 
 def get_pizzas():
   cheeseboard_page = urllib2.urlopen("http://cheeseboardcollective.coop/pizza")
-  sliver_page = urllib2.urlopen("http://sliverpizzeria.com/home/")
+  sliver_page = urllib2.urlopen("http://sliverpizzeria.com/")
   cheeseboard_soup = bs(cheeseboard_page)
   sliver_soup = bs(sliver_page)
 
   cheeseboard_pizzas = cheeseboard_soup.findAll("div",attrs={"class":"column"})
 
   sliver_pizzas = sliver_soup.findAll("div",attrs={"class":"home-excerpt"})
-  
+
+  monday = re.compile("Monday (.*?) Tuesday")
+  tuesday = re.compile("Tuesday (.*?) Wednesday")
+  wednesday = re.compile("Wednesday (.*?) Thursday")
+  thursday = re.compile("Thursday (.*?) Friday")
+
   html_string = "<html><body>"
 
   html_string += "<div style='width:50%;float:left'>"
