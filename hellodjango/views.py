@@ -38,8 +38,8 @@ def get_pizzas():
   html_string += "</div><div style='width:50%;float:left'>"
   html_string += "<h2>CHEESEBOARD</h2>"
   html_string += "<h3>MONDAY</h3>"
-  html_string += "GO TO SLIVER<br>"
-  html_string += "NO ONE IS HERE"
+  html_string += "no pizza,<br>"
+  html_string += "today."
   html_string += "<h3>TUESDAY</h3>"
   html_string += cheeseboard_pizzas[0]
   html_string += "<h3>WEDNESDAY</h3>"
