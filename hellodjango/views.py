@@ -2,9 +2,6 @@ from django.http import HttpResponse
 import urllib2
 from BeautifulSoup import BeautifulSoup as bs
 import re
-from mechanize import Browser
-
-
 
 def home(request):
   html = get_pizzas()
