@@ -29,7 +29,7 @@ def get_pizzas():
   html_string += str(sliver_pizzas[0])
   html_string += "</div><div style='width:50%;float:left'>"
   html_string += "<h2>CHEESEBOARD</h2>"
-  html_string += str(cheeseboard_pizzas[0])[0:1111]
+  html_string += str(cheeseboard_pizzas[0])[55:1000]
   html_string += "</div>"
   html_string += "</body></html>"
   return html_string
