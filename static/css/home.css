@@ -17,6 +17,10 @@ html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre
 
 
 /* BASE */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -26,11 +30,10 @@ html, body {
 }
 
 section {
-    margin: 11px;
-}
-
-section:first-child {
-    margin-bottom: 33px;
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+    width: 50%;
+    float: left;
 }
 
 header {
@@ -48,7 +51,8 @@ header {
 
 .day-container {
     padding: 11px;
-    margin: 11px auto;
+    margin: 11px auto 0;
+    height: 100px;
     max-width: 750px;
     background-color: #FCFCFC;
     border: 1px solid #AAAAAA;
@@ -73,6 +77,10 @@ header {
     top: -1px;
 }
 
+.pizza {
+    text-align: center;
+}
+
 
 
 .day {
@@ -85,6 +93,15 @@ header {
 
 /* FOR MOBILE */
 @media only screen and (max-width: 700px) {
+    section {
+        float: none;
+        width: 100%;
+    }
+
+    section:first-child {
+        margin-bottom: 22px;
+    }
+
     .day-container {
         display: none;
     }
