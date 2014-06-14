@@ -25,11 +25,7 @@ html, body {
 }
 
 section {
-    padding: 11px;
     margin: 11px;
-    background-color: #FCFCFC;
-    border: 1px solid #AAAAAA;
-    box-shadow: 1px 1px 1px #AAAAAA;
 }
 
 header {
@@ -39,4 +35,22 @@ header {
 .day {
     margin: 15px 0 10px;
     font-size: 20px;
+}
+
+.day-container {
+    padding: 11px;
+    margin: 11px;
+    background-color: #FCFCFC;
+    border: 1px solid #AAAAAA;
+    box-shadow: 1px 1px 1px #AAAAAA;
+}
+
+@media only screen and (max-width: 700px) {
+    .day-container {
+        display: none;
+    }
+
+    .day-container:first-child {
+        display: block;
+    }
 }
