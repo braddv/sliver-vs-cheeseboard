@@ -1,4 +1,4 @@
-/* YUI 3.17.2 (build 9c3c78e) Copyright 2014 Yahoo! Inc. All rights reserved. Licensed under the BSD License. http://yuilibrary.com/license/ */
+/* YUI CSS Reset 3.17.2 (build 9c3c78e) Copyright 2014 Yahoo! Inc. All rights reserved. Licensed under the BSD License. http://yuilibrary.com/license/ */
 html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
 
 /* FONTS */
@@ -15,36 +15,75 @@ html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre
     src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/MTP_ySUJH_bn48VBG8sNSqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
 }
 
-/* BASE */
 
+/* BASE */
 html, body {
     width: 100%;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    background-color: #1693A5;
 }
 
 section {
     margin: 11px;
 }
 
-header {
-    font-size: 26px;
+section:first-child {
+    margin-bottom: 33px;
 }
 
-.day {
-    margin: 15px 0 10px;
-    font-size: 20px;
+header {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000
+    ;
 }
 
 .day-container {
     padding: 11px;
-    margin: 11px;
+    margin: 11px auto;
+    max-width: 750px;
     background-color: #FCFCFC;
     border: 1px solid #AAAAAA;
     box-shadow: 1px 1px 1px #AAAAAA;
+    cursor: pointer;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
 
+.day-container:hover {
+    background-color: #F8F8F8;
+    border: 1px solid #888888;
+    box-shadow: 1px 1px 1px #888888;
+}
+
+.day-container:active {
+    position: relative;
+    top: -1px;
+}
+
+
+
+.day {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* FOR MOBILE */
 @media only screen and (max-width: 700px) {
     .day-container {
         display: none;
