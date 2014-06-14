@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '@x1sfivix4ask_9!ol$&@qg7!69w_+$wv$j#tz3u)(8q-^s$xr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -87,6 +87,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-TEMPLATES_DIR = (
-    '/templates/'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates')
 )

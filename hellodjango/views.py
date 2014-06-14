@@ -3,11 +3,13 @@ from django.shortcuts import render_to_response
 import urllib2
 from BeautifulSoup import BeautifulSoup as bs
 import re
+import os
 
 def home(request):
   pizza_data = get_pizzas_data()
-  template_file = 'templates/home.html'
-  response = render_to_response(template_file, pizza_data)
+  template_name =  'home.html'
+
+  response = render_to_response(template_name, pizza_data)
   return response
 
 def get_pizzas_data():
@@ -18,8 +20,8 @@ def get_pizzas_data():
   parsed_cheeseboard = parseHtml(cheeseboard_html)
   parsed_sliver = parseHtml(sliver_html)
 
-  cheeseboard_pizzas_html = cheeseboard_soup.findAll("div",attrs={"class":"column"})
-  sliver_pizzas_html = sliver_soup.findAll("div",attrs={"class":"home-excerpt"})
+  cheeseboard_pizzas_html = parsed_cheeseboard.findAll("div",attrs={"class":"column"})
+  sliver_pizzas_html = parsed_sliver.findAll("div",attrs={"class":"home-excerpt"})
 
   cheeseboard_pizzas = [pizza.text for pizza in cheeseboard_pizzas_html[0].findAll('p')]
   sliver_pizzas = [pizza.text for pizza in sliver_pizzas_html[0].findAll('p')]
