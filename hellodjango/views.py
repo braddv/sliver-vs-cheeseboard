@@ -6,6 +6,7 @@ import re
 import unicodedata
 
 def home(request):
+  default = pizzas
   pizza_data = get_pizzas_data()
   template_name =  'home.html'
 
