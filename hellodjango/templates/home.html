@@ -1,6 +1,10 @@
 <html>
+    <head>
+        <title>Sliver VS Cheeseboard</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
+    </head>
     <body>
-        <div style='width:50%;float:left'>
+        <div class="col">
             <h2>SILVER</h2>
             <h3>MONDAY</h3>
             {{ sliver[0] }}
@@ -15,11 +19,10 @@
             <h3>SATURDAY</h3>
             {{ sliver[5] }}
         </div>
-        <div style='width:50%;float:left'>
+        <div class="col">
             <h2>CHEESEBOARD</h2>
             <h3>MONDAY</h3>
-            no pizza,
-            <br>today.
+            No Pizza Today
             <h3>TUESDAY</h3>
             {{ cheeseboard[0] }}
             <h3>WEDNESDAY</h3>
