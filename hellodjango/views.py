@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 import urllib2
 from BeautifulSoup import BeautifulSoup as bs
 import re
-import os
+import unicodedata
 
 def home(request):
   pizza_data = get_pizzas_data()
@@ -26,9 +26,12 @@ def get_pizzas_data():
   cheeseboard_pizzas = [pizza.text for pizza in cheeseboard_pizzas_html[0].findAll('p')]
   sliver_pizzas = [pizza.text for pizza in sliver_pizzas_html[0].findAll('p')]
 
+
+  lambda_splitter = lambda str: str.strip('.').split(',')
+
   pizzas = {
-    "sliver": sliver_pizzas,
-    "cheeseboard": cheeseboard_pizzas
+    "sliver": map(lambda_splitter, sliver_pizzas),
+    "cheeseboard": map(lambda_splitter, cheeseboard_pizzas)
   }
 
   return pizzas

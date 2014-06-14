@@ -5,35 +5,39 @@
         <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}" />
     </head>
     <body>
-        <div class="col">
-            <h2>SILVER</h2>
-            <h3>MONDAY</h3>
-            {{ sliver.0 }}
-            <h3>TUESDAY</h3>
-            {{ sliver.1 }}
-            <h3>WEDNESDAY</h3>
-            {{ sliver.2 }}
-            <h3>THURSDAY</h3>
-            {{ sliver.3 }}
-            <h3>FRIDAY</h3>
-            {{ sliver.4 }}
-            <h3>SATURDAY</h3>
-            {{ sliver.5 }}
-        </div>
-        <div class="col">
-            <h2>CHEESEBOARD</h2>
-            <h3>MONDAY</h3>
-            No Pizza Today
-            <h3>TUESDAY</h3>
-            {{ cheeseboard.0 }}
-            <h3>WEDNESDAY</h3>
-            {{ cheeseboard.1 }}
-            <h3>THURSDAY</h3>
-            {{ cheeseboard.2 }}
-            <h3>FRIDAY</h3>
-            {{ cheeseboard.3 }}
-            <h3>SATURDAY</h3>
-            {{ cheeseboard.4 }}
-        </div>
+        <section class="left">
+            <header>SLIVER</header>
+            <div class="day">MONDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=sliver.0 %}</div>
+            <div class="day">TUESDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=sliver.1 %}</div>
+            <div class="day">WEDNESDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=sliver.2 %}</div>
+            <div class="day">THURSDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=sliver.3 %}</div>
+            <div class="day">FRIDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=sliver.4 %}</div>
+            <div class="day">SATURDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=sliver.5 %}</div>
+        </section>
+
+        <section class="right">
+            <header>CHEESEBOARD</header>
+            <div class="day">MONDAY</div>
+            <div class="pizzas">No Pizza Today</div>
+            <div class="day">TUESDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=cheeseboard.0 %}</div>
+            <div class="day">WEDNESDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=cheeseboard.1 %}</div>
+            <div class="day">THURSDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=cheeseboard.2 %}</div>
+            <div class="day">FRIDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=cheeseboard.3 %}</div>
+            <div class="day">SATURDAY</div>
+            <div class="pizzas">{% include "pizzas-list.html" with pizzas=cheeseboard.4 %}</div>
+        </section>
+
+        <script src="{% static 'jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'home.js' %}"></script>
     </body>
 </html>
