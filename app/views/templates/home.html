@@ -12,7 +12,7 @@
                 {% for pizza in pizzas %}
                     <div class="day-container">
                         <div class="day">{{ pizza.day }}</div>
-                        <div class="pizza">{{ pizza.sliver }}</div>
+                        <div class="pizza">{{ pizza.sliver.desc }}</div>
                     </div>
                 {% endfor %}
             </div>
@@ -24,15 +24,15 @@
                 {% for pizza in pizzas %}
                     <div class="day-container">
                         <div class="day">{{ pizza.day }}</div>
-                        <div class="pizza">{{ pizza.cheeseboard }}</div>
+                        <div class="pizza">{{ pizza.cheeseboard.desc }}</div>
                     </div>
                 {% endfor %}
             </div>
         </section>
 
         <div class="arrows">
-            <div class="left-arrow">&laquo;</div>
-            <div class="right-arrow">&raquo;</div>
+            <div class="left-arrow arrow">&laquo;</div>
+            <div class="right-arrow arrow">&raquo;</div>
         </div>
 
         
