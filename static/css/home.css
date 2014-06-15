@@ -34,6 +34,7 @@ section {
     padding-right: 0.9375em;
     width: 50%;
     float: left;
+    margin-bottom: 11px;
 }
 
 header {
@@ -80,8 +81,8 @@ header {
 
 .day-container.js-selected {
     background-color: #EEEEEE;
-    border: 2px solid #666666;
-    box-shadow: 1px 1px 2px #666666;
+    border: 1px solid #444444;
+    box-shadow: 1px 1px 2px #444444;
 }
 
 .pizza {
