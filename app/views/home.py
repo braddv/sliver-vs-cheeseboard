@@ -15,6 +15,4 @@ class HomeView(View):
         template_name = 'home.html'
         response = render_to_response(template_name, pizza_data)
 
-        print pizza_data
-
         return response

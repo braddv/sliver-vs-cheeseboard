@@ -48,6 +48,11 @@ class HomeModel(models.Model):
                 'day': 'Saturday',
                 'sliver': sliver_pizzas[5],
                 'cheeseboard': cheeseboard_pizzas[5]
+            },
+            {
+                'day': 'Sunday',
+                'sliver': 'Closed',
+                'cheeseboard': 'Closed'
             }
         ]
 
@@ -55,14 +60,13 @@ class HomeModel(models.Model):
 
         currentDay = datetime.datetime.now().strftime('%A')
 
+
         startingIndex = -1
         for index, pizza in enumerate(pizzas):
-            print pizza
             if (pizza['day'] == currentDay):
                 startingIndex = index
             if (startingIndex > -1):
                 reorderedPizzas.append(pizza)
-
 
         for index, pizza in enumerate(pizzas):
             if (index < startingIndex):
