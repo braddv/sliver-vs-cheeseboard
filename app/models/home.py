@@ -3,8 +3,17 @@ import datetime
 from BeautifulSoup import BeautifulSoup as bs
 from django.db import models
 
-class HomeModel(models.Model):
-    def get_pizzas_data(self):
+
+class Pizza:
+    
+    def __init__(self, day_of_week,sliver_text,cheeseboard_text):
+        self.day_of_week = day_of_week
+        self.sliver_text=sliver_text
+        self.cheeseboard_text=cheeseboard_text
+
+class HomeManger(models.Manager):
+     
+     def get_pizzas_data(self):
         cheeseboard_html = urllib2.urlopen("http://cheeseboardcollective.coop/pizza")
         sliver_html = urllib2.urlopen("http://sliverpizzeria.com/")
 
@@ -72,6 +81,18 @@ class HomeModel(models.Model):
                 reorderedPizzas.append(pizza)
             else:
                 break
-
-
         return reorderedPizzas
+
+    def update_if_exists_else_create(pizza):
+        if (pizza.exists()):
+            pizza.create()
+        else:
+            pizza.update() 
+
+class HomeModel(models.Model):
+   
+    pizza = models.CharField(1024)
+    votes = models.IntegerField(default=0)
+
+    objects=HomeManager()
+       
