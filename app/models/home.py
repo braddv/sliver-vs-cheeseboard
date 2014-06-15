@@ -60,7 +60,6 @@ class HomeModel(models.Model):
 
         currentDay = datetime.datetime.now().strftime('%A')
 
-
         startingIndex = -1
         for index, pizza in enumerate(pizzas):
             if (pizza['day'] == currentDay):
