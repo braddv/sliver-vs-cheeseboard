@@ -1,43 +1,37 @@
 <html>
     <head>
-    <title>Sliver VS Cheeseboard</title>
-    {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
+        <title>Sliver VS Cheeseboard</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" />
     </head>
     <body>
-    <section class="left">
-    <header>SLIVER</header>
-    <div class="day">MONDAY</div>
-    <div class="pizzas">{{ sliver.0 }}</div>
-    <div class="day">TUESDAY</div>
-    <div class="pizzas">{{ sliver.1 }}</div>
-    <div class="day">WEDNESDAY</div>
-    <div class="pizzas">{{ sliver.2 }}</div>
-    <div class="day">THURSDAY</div>
-    <div class="pizzas">{{ sliver.3 }}</div>
-    <div class="day">FRIDAY</div>
-    <div class="pizzas">{{ sliver.4 }}</div>
-    <div class="day">SATURDAY</div>
-    <div class="pizzas">{{ sliver.5 }}</div>
-    </section>
+        <section>
+            <header>Sliver</header>
+            <div class="days">
+                {% for pizza in pizzas %}
+                    <div class="day-container">
+                        <div class="day">{{ pizza.day }}</div>
+                        <div class="pizza">{{ pizza.sliver }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
 
-    <section class="right">
-    <header>CHEESEBOARD</header>
-    <div class="day">MONDAY</div>
-    <div class="pizzas">No Pizza Today</div>
-    <div class="day">TUESDAY</div>
-    <div class="pizzas">{{ cheeseboard.0 }}</div>
-    <div class="day">WEDNESDAY</div>
-    <div class="pizzas">{{ cheeseboard.1 }}</div>
-    <div class="day">THURSDAY</div>
-    <div class="pizzas">{{ cheeseboard.2 }}</div>
-    <div class="day">FRIDAY</div>
-    <div class="pizzas">{{ cheeseboard.3 }}</div>
-    <div class="day">SATURDAY</div>
-    <div class="pizzas">{{ cheeseboard.4 }}</div>
-    </section>
+        <section>
+            <header>Cheeseboard</header>
+            <div class="days">
+                {% for pizza in pizzas %}
+                    <div class="day-container">
+                        <div class="day">{{ pizza.day }}</div>
+                        <div class="pizza">{{ pizza.cheeseboard }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
 
-    <script src="{% static 'js/libs/jquery-1.11.1.min.js' %}"></script>
-    <script src="{% static 'js/home.js' %}"></script>
+        
+
+        <script src="{% static 'js/libs/jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'js/home.js' %}"></script>
     </body>
 </html>

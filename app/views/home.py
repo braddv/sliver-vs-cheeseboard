@@ -8,7 +8,9 @@ class HomeView(View):
         self.model = HomeModel()
 
     def get(self, request, *args):
-        pizza_data = self.model.get_pizzas_data()
+        pizza_data = {
+            'pizzas': self.model.get_pizzas_data()
+        }
 
         template_name = 'home.html'
         response = render_to_response(template_name, pizza_data)
