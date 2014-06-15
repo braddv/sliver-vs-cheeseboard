@@ -22,32 +22,32 @@ class HomeModel(models.Model):
             {
                 'day': 'Monday',
                 'sliver': sliver_pizzas[0].strip('.'),
-                'cheeseboard': cheeseboard_pizzas[0].strip('.')
+                'cheeseboard': 'Closed'
             },
             {
                 'day': 'Tuesday',
                 'sliver': sliver_pizzas[1].strip('.'),
-                'cheeseboard': cheeseboard_pizzas[1].strip('.')
+                'cheeseboard': cheeseboard_pizzas[0].strip('.')
             },
             {
                 'day': 'Wednesday',
                 'sliver': sliver_pizzas[2].strip('.'),
-                'cheeseboard': cheeseboard_pizzas[2].strip('.')
+                'cheeseboard': cheeseboard_pizzas[1].strip('.')
             },
             {
                 'day': 'Thursday',
                 'sliver': sliver_pizzas[3].strip('.'),
-                'cheeseboard': cheeseboard_pizzas[3].strip('.')
+                'cheeseboard': cheeseboard_pizzas[2].strip('.')
             },
             {
                 'day': 'Friday',
                 'sliver': sliver_pizzas[4].strip('.'),
-                'cheeseboard': cheeseboard_pizzas[4].strip('.')
+                'cheeseboard': cheeseboard_pizzas[3].strip('.')
             },
             {
                 'day': 'Saturday',
                 'sliver': sliver_pizzas[5].strip('.'),
-                'cheeseboard': cheeseboard_pizzas[5].strip('.')
+                'cheeseboard': cheeseboard_pizzas[4].strip('.')
             },
             {
                 'day': 'Sunday',
